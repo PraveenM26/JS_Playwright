@@ -37,8 +37,8 @@ console.log("After update", jsonData1)
 //Updating the 2nd row of excel file with new data
 //jsonData1[2]={UserName: "UpdatedUser", Password: "UpdatedPassword"} or
 
-jsonData1[1].UserName="Updateuser@gmail.com"
-jsonData1[1].Password="UpdatedPassword@123"
+jsonData1[1].UserName="Updateuser1@gmail.com"
+jsonData1[1].Password="UpdatedPassword1@123"
 console.log("After update", jsonData1)
 
 //Now data is changed in the jsonData1 variable, we need to feed this data to excel file.
@@ -50,4 +50,6 @@ const updatedNewSheet=xlsx.utils.json_to_sheet(jsonData1);
 workbook.Sheets[allSheets[0]] = updatedNewSheet;
 
 //To save the updated data to the excel file, we need to use writeFile method of xlsx 
+xlsx.writeFile(workbook,filePath)
+console.log("Changes saved")
 })
